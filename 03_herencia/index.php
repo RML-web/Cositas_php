@@ -1,13 +1,21 @@
 <?php
-require_once 'persona.php';
+require_once './informatico.php';
+require_once './proyecto.php';
+$persona = new Persona("Bryan", "Bauçà", 2, 18);
+// var_dump($persona);
+echo "<hr>";
+echo $persona->hablar();
+echo "<hr>";
+$informatico = new Informatico("Jenifer", "Riera", 1.60, 22, "html, css, js", 1);
+// var_dump($informatico);
 
-$persona1 = new persona("Plátano", "Mandarino", "160", 24);
-$persona2 = new persona("Plátano", "Mandarino", "160", 24);
-$persona3 = new persona("Plátano", "Mandarino", "160", 24);
-$persona4 = new persona("Plátano", "Mandarino", "160", 24);
-
-//Crear 3 coches más y mostrar su info 
-echo $persona1->mostrarInfo();
-echo $persona2->mostrarInfo();
-echo $persona3->mostrarInfo();
-echo $persona4->mostrarInfo();
+// $informatico->setNombre("Paco");
+// echo $informatico->getNombre() . " sabe "
+//     . $informatico->getLenguajes()
+//     . " y dice "
+//     . $informatico->hablar();
+$web = new Proyecto(10.4, $informatico);
+// var_dump($web);
+echo $web->mostrarDatos();
+echo "<hr>";
+echo $web->persona->hablar();
