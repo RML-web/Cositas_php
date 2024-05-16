@@ -1,34 +1,51 @@
 <?php
 
-class Moto extends Vehiculo
-{
-    private $cilindrada;
+class Moto{
 
+    private $cc;
 
-    public function __construct($cilindrada, $matricula, $marca, $modelo)
+    public function __construct($cc)
     {
-        parent::__construct($matricula, $marca, $modelo);
-        $this->cilindrada = $cilindrada;
-     
+
+        $this->cc =  $cc;
+    }
+
+
+    public function moto()
+    {
+        $informacion = "<h2>Información</h2>";
+        $informacion .= "<p>Cc: " . $this->cc ."</p>";
+        return $informacion;
     }
 
     /**
-     * Get the value of cilindrada
+     * Get the value of puertas
      */ 
-    public function getCilindrada()
+    public function getCc()
     {
-        return $this->cilindrada;
+        return $this->cc;
     }
 
     /**
-     * Set the value of cilindrada
+     * Set the value of puertas
      *
      * @return  self
      */ 
-    public function setCilindrada($cilindrada)
+    public function setCc($cc)
     {
-        $this->cilindrada = $cilindrada;
+        $this->cc = $cc;
 
         return $this;
     }
+
+    /**
+     * Get the value of marca
+     */ 
+    
 }
+    
+
+    
+
+
+
